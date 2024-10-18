@@ -198,7 +198,7 @@ function ApplySkin()
     local _Target = PlayerPedId()
     local citizenid = RSGCore.Functions.GetPlayerData().citizenid
     local PlayerData = RSGCore.Functions.GetPlayerData()
-    local currentHealth = PlayerData.metadata["health"]
+    local currentHealth = GetEntityHealth(_Target) or PlayerData.metadata["health"] 
 
     RSGCore.Functions.TriggerCallback('rsg-multicharacter:server:getAppearance', function(data)
         local _SkinData = data.skin
